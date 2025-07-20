@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PMR SMKN 65</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .color-bar {
+      display: flex;
+      width: 100%;
+      height: 6px;
+    }
+
+    .color-bar div {
+      flex: 1;
+    }
+
+    .color-1 { background-color: #d82027; }
+    .color-2 { background-color: #f25c46; }
+    .color-3 { background-color: #f7ac92; }
+    .color-4 { background-color: #fae3db; }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1050px;
+      animation: slideDown 1s ease-out;
+    }
+
+    .navbar img {
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .navbar a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #d20c0c;
+      transform: translateY(-2px);
+    }
+
+    .divider-container {
+      text-align: center;
+      margin: 40px 0;
+      animation: fadeIn 2s ease;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+      margin: 0 20px;
+    }
+
+    .divider span {
+      font-size: 20px;
+      color: #aaa;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .anggota-container {
+      width: 100%;
+      max-width: 1050px;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      animation: slideUp 1.2s ease-out;
+    }
+
+    .anggota-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #d20c0c;
+      font-size: 24px;
+    }
+
+    .anggota-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .anggota-table th, .anggota-table td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+      font-size: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .anggota-table th {
+      background-color: #e30613;
+      color: white;
+    }
+
+    .anggota-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .anggota-table tr:hover {
+      background-color: #ffe5e5;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .navbar img {
+        height: 40px;
+        margin-bottom: 10px;
+      }
+
+      .navbar a {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .anggota-container {
+        padding: 20px;
+      }
+
+      .anggota-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .anggota-table th,
+      .anggota-table td {
+        font-size: 13px;
+        padding: 10px;
+      }
+    }
+
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="color-bar">
+    <div class="color-1"></div>
+    <div class="color-2"></div>
+    <div class="color-3"></div>
+    <div class="color-4"></div>
+  </div>
+
+  <div class="content">
+    <div class="navbar">
+      <img src="image copy.png" alt="Logo Organisasi">
+      <a href="index.html">Beranda</a>
+      <a href="anggota.html">Anggota</a>
+      <a href="kontak.html">Instragram</a>
+      <a href="struktur.html">Struktur Jabatan</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="anggota-container">
+      <h2>Data Anggota</h2>
+      <table class="anggota-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Kelas</th>
+            <th>Jenis Kelamin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ahmad Hasan Priadi</td>
+            <td>XII PPLG 2</td>
+            <td>Laki-laki</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Ataya Rizqulah Ramadhany</td>
+            <td>XII DKV 1</td>
+            <td>Laki-laki</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Arsila Aulia Azis</td>
+            <td>XI DKV 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Aura Herna Anggraani</td>
+            <td>XI DKV 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Bella Anindya Anggraeni</td>
+            <td>XI DKV 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Bagas Adi Priyanta</td>
+            <td>XI PPLG 1</td>
+            <td>Laki-laki</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Catharina Angelique Wea W.L</td>
+            <td>XI DKV 2</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Appupah Syabanyah</td>
+            <td>XI PPLG 2</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Bunga lestari</td>
+            <td>XI BCF 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Divandra Islami Azzahra</td>
+            <td>XII DKV 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Fiarissa Ramadhany Firdaus</td>
+            <td>XII DKV 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Halimatus Sadiah D.L</td>
+            <td>XII PPLG 2</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Indira Salsabillah </td>
+            <td>XII DKV 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Kirana Bintang Aulya</td>
+            <td>XI DKV 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Keynara Alvisha Ferdian</td>
+            <td>XI DKV 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Khaira Nichita Syahla</td>
+            <td>XI BCF 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>Mozza Aureli Suherli</td>
+            <td>XI DKV 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>Syifa Zhrotum Nisa</td>
+            <td>XI DKV 2</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>Saskiya Syafrina</td>
+            <td>XI RPL 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Pradihiya Azmi Rafif</td>
+            <td>XII PPLG 2</td>
+            <td>Laki-laki</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>Nadinda Najuwa</td>
+            <td>XII PPLG 2</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>Reva Amelia Putri</td>
+            <td>XII PPLG 2</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>23</td>
+            <td>Saskia Meiliya Rossa</td>
+            <td>XII PPLG 2</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>Nayla Azzahra</td>
+            <td>XI BCF 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>Aura Herna Anggraani</td>
+            <td>XI RPL 1</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td>Apriliani Ayuni Anom</td>
+            <td>Alumni PPLG </td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>27</td>
+            <td>Siti Zahra Amelia</td>
+            <td>Alumni BCF </td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>28</td>
+            <td>Cindy Aulia Kirana</td>
+            <td>Alumni DKV </td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>29</td>
+            <td>Al Zahra Yuilia</td>
+            <td>Alumni PPLG </td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td>Gatot Kesuma</td>
+            <td>Alumni PPLG </td>
+            <td>Laki-laki</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="divider-container">
+    <div class="divider">
+      <span>Salam Kemanusiaan</span>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PMR SMKN 65</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .color-bar {
+      display: flex;
+      width: 100%;
+      height: 6px;
+    }
+
+    .color-bar div { flex: 1; }
+    .color-1 { background-color: #d82027; }
+    .color-2 { background-color: #f25c46; }
+    .color-3 { background-color: #f7ac92; }
+    .color-4 { background-color: #fae3db; }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 0 10px;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1050px;
+    }
+
+    .navbar img {
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .navbar a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #d20c0c;
+    }
+
+    .marquee-box {
+      margin: 10px auto 30px;
+      max-width: 1050px;
+      padding: 15px;
+      border: 3px solid crimson;
+      border-radius: 10px;
+      background-color: #ffecec;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .marquee-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: scroll-left 10s linear infinite;
+      font-size: 20px;
+      color: crimson;
+      font-weight: bold;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .slider-container {
+      width: 100%;
+      max-width: 1050px;
+      margin: 30px auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 700px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .prev-btn { left: 15px; }
+    .next-btn { right: 15px; }
+
+    .tracker {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #a70909;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: white;
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card img {
+      max-width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .card h3 { margin-bottom: 10px; }
+    .card p { font-size: 14px; margin-bottom: 15px; }
+    .card a {
+      text-decoration: none;
+      color: #e30613;
+      font-weight: bold;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+      display: inline-block;
+    }
+
+    .divider-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+      margin: 0 20px;
+    }
+
+    .divider span {
+      font-size: 20px;
+      color: #aaa;
+      font-weight: 500;
+    }
+
+    .container-prinsip {
+      max-width: 1060px;
+      margin: 60px auto;
+      background-color: #fff;
+      border: 4px solid #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .judul-prinsip {
+      text-align: center;
+      color: #e60000;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .prinsip {
+      margin-bottom: 50px;
+    }
+
+    .prinsip h3 {
+      color: #e60000;
+      margin-bottom: 5px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .prinsip h3::before {
+      content: "✚";
+      color: #e60000;
+      margin-right: 8px;
+    }
+
+    .prinsip p {
+      margin-left: 24px;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    @media (max-width: 600px) {
+      .navbar { flex-direction: column; text-align: center; }
+      .slide { height: 200px; }
+      .services { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="color-bar">
+    <div class="color-1"></div>
+    <div class="color-2"></div>
+    <div class="color-3"></div>
+    <div class="color-4"></div>
+  </div>
+
+  <div class="content fade-in">
+    <div class="navbar">
+      <img src="image copy.png" alt="Logo Organisasi">
+      <a href="index.html">Beranda</a>
+      <a href="anggota.html">Anggota</a>
+      <a href="kontak.html">Instagram</a>
+      <a href="struktur.html">Struktur Jabatan</a>
+    </div>
+  </div>
+
+  <div class="marquee-box fade-in">
+    <div class="marquee-text">Selamat Datang di PMR SMKN 65</div>
+  </div>
+
+  <div class="slider-container fade-in">
+    <button class="nav-button prev-btn" id="prevBtn">&#10094;</button>
+    <div class="slides" id="slides">
+      <div class="slide" style="background-image: url('foto pmr.jpg');"></div>
+      <div class="slide" style="background-image: url('foto pelantikan.jpg');"></div>
+      <div class="slide" style="background-image: url('foto piala.jpg');"></div>
+    </div>
+    <button class="nav-button next-btn" id="nextBtn">&#10095;</button>
+    <div class="tracker" id="tracker">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <div class="services fade-in">
+    <div class="card">
+      <img src="image copy 2.png" alt="Ambulans">
+      <h3>Sejarah</h3>
+      <p>Palang Merah Indonesia (PMI) didirikan pada 17 September 1945</p>
+      <a href="Sejarah.html">lihat</a>
+    </div>
+    <div class="card">
+      <img src="image copy 4.png" alt="Relawan">
+      <h3>Relawan</h3>
+      <p>Jadi relawan PMR SMKN 65 JAKARTA, bantu sesama</p>
+      <a href="Relawan.html"></a>
+    </div>
+    <div class="card">
+      <img src="image copy 3.png" alt="Alat">
+      <h3>Alat</h3>
+      <p>Ketersediaan alat-alat UKS</p>
+      <a href="alat.html">lihat</a>
+    </div>
+    <div class="card">
+      <img src="image.png" alt="Obat">
+      <h3>Obat-obatan</h3>
+      <p>Obat-obatan dan Manfaat</p>
+      <a href="Obat.html">lihat</a>
+    </div>
+  </div>
+
+  <div class="container-prinsip fade-in">
+    <div class="judul-prinsip">7 Prinsip Dasar Gerakan Internasional Palang Merah dan Bulan Sabit Merah</div>
+
+    <div class="prinsip"><h3>1. KEMANUSIAAN</h3><p>Gerakan Palang Merah dan Bulan Sabit Merah Internasional didirikan berdasarkan keinginan memberikan pertolongan tanpa membedakan korban terluka di dalam pertempuran, berupaya dalam kemampuan bangsa dan antar bangsa, mencegah dan mengatasi penderitaan sesama manusia. Palang Merah menumbuhkan saling pengertian, kerjasama dan perdamaian abadi bagi sesama manusia.</p></div>
+    <div class="prinsip"><h3>2. KESAMAAN</h3><p>Gerakan ini tidak membuat perbedaan atas dasar kebangsaan, kesukuan, agama/kepercayaan tingkatan atau pandangan politik. Tujuannya semata – mata mengurangi penderitaan manusia sesuai dengan kebutuhannya dan mendahulukan keadaan yang paling parah.</p></div>
+    <div class="prinsip"><h3>3. KENETRALAN</h3><p>Agar senantiasa mendapat kepercayaan dari semua pihak, gerakan ini tidak boleh memihak atau melibatkan diri dalam pertentangan politik, kesukuan, agama atau idiologi.</p></div>
+    <div class="prinsip"><h3>4. KEMANDIRIAN</h3><p>Gerakan ini bersifat mandiri. Perhimpunan Nasional disamping membantu Pemerintahannya dalam bidang kemanusiaan, juga harus mentaati peraturan negaranya, harus selalu menjaga otonominya sehingga dapat bertindak sesuai dengan prinsip – prinsip gerakan ini.</p></div>
+    <div class="prinsip"><h3>5. KESUKARELAAN</h3><p>Gerakan ini adalah gerakan pemberi bantuan sukarela, yang tidak didasari oleh keinginan untuk mencari keuntungan apapun</p></div>
+    <div class="prinsip"><h3>6. KESATUAN</h3><p>Didalam suatu negara hanya ada satu Perhimpunan Palang Merah atau Bulan Sabit Merah yang terbuka untuk semua orang dan melaksanakan tugas kemanusiaan di seluruh wilayah.</p></div>
+    <div class="prinsip"><h3>7. KESEMESTAAN</h3><p>Gerakan Palang Merah dan Bulan Sabit Merah Internasional adalah bersifat semesta. Setiap perhimpunan mempunyai hak dan tanggung jawab yang sama dalam menolong sesama manusia.</p></div>
+  </div>
+
+  <div class="divider-container fade-in">
+    <div class="divider">
+      <span>Salam Kemanusiaan</span>
+    </div>
+  </div>
+
+  
+
+  <script>
+    const slides = document.getElementById('slides');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+    const totalSlides = dots.length;
+
+    function goToSlide(index) {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+      currentIndex = index;
+    }
+
+    function autoSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      goToSlide(currentIndex);
+    }
+
+    let slideInterval = setInterval(autoSlide, 3000);
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+        resetInterval();
+      });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      goToSlide(currentIndex);
+      resetInterval();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      goToSlide(currentIndex);
+      resetInterval();
+    });
+
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(autoSlide, 3000);
+    }
+  </script>
+</body>
+</html>

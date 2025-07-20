@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PMR SMKN 65</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+   
+    .color-bar {
+      display: flex;
+      width: 100%;
+      height: 6px;
+    }
+
+    .color-bar div { flex: 1; }
+    .color-1 { background-color: #d82027; }
+    .color-2 { background-color: #f25c46; }
+    .color-3 { background-color: #f7ac92; }
+    .color-4 { background-color: #fae3db; }
+
+   
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in;
+    }
+
+   
+    .navbar {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1050px;
+      animation: slideDown 1s ease-out;
+    }
+
+    .navbar img {
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .navbar a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #d20c0c;
+      transform: translateY(-2px);
+    }
+
+   
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    .kontak-box {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-top: 8px solid #d00000;
+      width: 250px;
+    }
+
+    .kontak-box img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #d00000;
+    }
+
+    .kontak-box h2 {
+      margin: 10px 0;
+      color: #d00000;
+      font-size: 1.2em;
+    }
+
+    .kontak-box a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #d00000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .kontak-box a:hover {
+      background-color: #a00000;
+    }
+
+   
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+   
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .navbar img {
+        height: 40px;
+        margin-bottom: 10px;
+      }
+
+      .navbar a {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .kontak-box {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    .divider-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: 0 20px;
+}
+
+.divider span {
+  font-size: 20px;
+  color: #aaa;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+  </style>
+</head>
+<body>
+
+ 
+  <div class="color-bar">
+    <div class="color-1"></div>
+    <div class="color-2"></div>
+    <div class="color-3"></div>
+    <div class="color-4"></div>
+  </div>
+
+ 
+  <div class="content">
+    <div class="navbar">
+      <img src="image copy.png" alt="Logo Organisasi">
+      <a href="index.html">Beranda</a>
+      <a href="anggota.html">Anggota</a>
+      <a href="kontak.html">Instagram</a>
+      <a href="struktur.html">Struktur Jabatan</a>
+    </div>
+  </div>
+
+  
+  <div class="container">
+    <div class="kontak-box"><img src="image copy 20.png"><h2>@pmrsmkn65jkt_</h2><a href="https://instagram.com/pmrsmkn65jkt_" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 19.png"><h2>@ahmad_sulaiman16</h2><a href="https://instagram.com/ahmad_sulaiman16" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 18.png"><h2>@mynameisriandhita</h2><a href="https://instagram.com/mynameisriandhita" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 17.png"><h2>@acan_priadi</h2><a href="https://instagram.com/acan_priadi" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 22.png"><h2>@alrizz.dd</h2><a href="https://instagram.com/alrizz.dd" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 21.png"><h2>@_kiranabintang</h2><a href="https://instagram.com/_kiranabintang" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 23.png"><h2>@atayaarzq</h2><a href="https://instagram.com/atayaarzq" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 25.png"><h2>@keynaralvsn</h2><a href="https://instagram.com/keynaralvsn" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 24.png"><h2>@bella_ndy2</h2><a href="https://instagram.com/bella_ndy2" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 26.png"><h2>@dvnzraaa</h2><a href="https://instagram.com/dvnzraaa" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 27.png"><h2>@pikapikuo</h2><a href="https://www.instagram.com/pikapikuo" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 33.png"><h2>@indirabillah</h2><a href="https://instagram.com/indirabillah" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 28.png"><h2>@4vv.aprill</h2><a href="https://instagram.com/4vv.aprill" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 29.png"><h2>@sadiah.dwi27</h2><a href="https://instagram.com/sadiah.dwi27" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 30.png"><h2>@cathrinn.aa</h2><a href="https://instagram.com/cathrinn.aa" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 31.png"><h2>@sza_zahra</h2><a href="https://instagram.com/sza_zahra" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 33.png"><h2>@arsilaazis</h2><a href="https://instagram.com/arsilaazis" target="_blank">Kunjungi Instagram</a></div>
+    <div class="kontak-box"><img src="image copy 32.png"><h2>@nichitaas</h2><a href="https://instagram.com/nichitaas" target="_blank">Kunjungi Instagram</a></div>
+  </div>
+
+   <div class="divider-container fade-in">
+    <div class="divider">
+      <span> Salam Kemanusian</span>
+    </div>
+  </div>
+
+</body>
+</html>

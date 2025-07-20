@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PMR SMKN 65 - Sejarah PMI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .color-bar {
+      display: flex;
+      width: 100%;
+      height: 6px;
+    }
+
+    .color-bar div { flex: 1; }
+    .color-1 { background-color: #d82027; }
+    .color-2 { background-color: #f25c46; }
+    .color-3 { background-color: #f7ac92; }
+    .color-4 { background-color: #fae3db; }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1050px;
+      animation: slideDown 1s ease-out;
+    }
+
+    .navbar img {
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .navbar a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #d20c0c;
+      transform: translateY(-2px);
+    }
+
+    .divider-container {
+      text-align: center;
+      margin: 40px 0;
+      animation: fadeIn 2s ease;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+      margin: 0 20px;
+    }
+
+    .divider span {
+      font-size: 20px;
+      color: #aaa;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: red;
+      margin-bottom: 5px;
+    }
+
+    .sub-title {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .image-container img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .text {
+      text-align: justify;
+      margin-bottom: 40px;
+    }
+
+    .video-section {
+      background-color: #b91c1c;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 6px 6px 0 0;
+      margin-top: 40px;
+    }
+
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .navbar img {
+        height: 40px;
+        margin-bottom: 10px;
+      }
+
+      .navbar a {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="color-bar">
+    <div class="color-1"></div>
+    <div class="color-2"></div>
+    <div class="color-3"></div>
+    <div class="color-4"></div>
+  </div>
+
+  <div class="content">
+    <div class="navbar">
+      <img src="image copy.png" alt="Logo Organisasi">
+      <a href="index.html">Beranda</a>
+      <a href="anggota.html">Anggota</a>
+      <a href="kontak.html">Instagram</a>
+      <a href="struktur.html">Struktur Jabatan</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Sejarah</h2>
+    <p class="sub-title">Palang Merah Indonesia</p>
+
+    <div class="image-container">
+      <img src="image copy 34.png" alt="Markas PMI">
+    </div>
+
+    <div class="text">
+      <p>Palang Merah Indonesia sebenarnya dimulai sebelum Perang Dunia II. Pada 21 Oktober 1873, Pemerintah Kolonial Belanda mendirikan Palang Merah di Indonesia yang bernama Nederlandsch Rode Kruis Afdeling Indie (Nerkai). Namun, organisasi ini cuma diperbolehkan untuk orang-orang Belanda saja.</p>
+      <p>Upaya mendirikan Palang Merah Indonesia dimulai sejak tahun 1942, dipelopori oleh Drs. Moch. Hatta dan Dr. Soeharto. Namun inisiatif ini melambat karena berbagai hambatan, termasuk pendudukan Jepang. Setelah Indonesia merdeka, tanggal 17 September 1945, Presiden Soekarno mengeluarkan dekrit pembentukan Palang Merah Indonesia.</p>
+      <p>Sejak saat itu, PMI terus menjalankan misi kemanusiaan seperti menolong korban bencana, musibah, maupun konflik yang terjadi. Seiring perubahan jaman, kegiatan PMI meluas mencakup kegiatan remaja, donor darah, pendidikan kepalangmerahan, dan bantuan internasional. Hingga kini, Palang Merah Indonesia menjadi anggota penuh gerakan Palang Merah Internasional.</p>
+    </div>
+
+    <div class="text">
+      <p>Palang Merah Indonesia (PMI) berhasil didirikan pada 17 September 1945, di bawah kepemimpinan Drs. Mohammad Hatta. Karena hanya diperbolehkan satu organisasi nasional per negara, pada 16 Januari 1950, pemerintah Belanda membubarkan NERKAI dan menyerahkan asetnya kepada PMI. Penyerahan tersebut diwakili oleh Dr. B. Van Trich dari NERKAI dan Dr. Bahder Djohan dari PMI. PMI memulai kegiatan dengan memberikan bantuan kepada korban Perang Kemerdekaan Indonesia dan memulangkan tawanan perang Sekutu dan Jepang.</p>
+      <p>PMI menerima pengakuan internasional dari Komite Internasional Palang Merah (ICRC) pada 15 Juni 1950, dan menjadi anggota ke-68 dari Liga Palang Merah dan Bulan Sabit Merah (sekarang IFRC). Keberadaan PMI kemudian diperkuat melalui Keppres No. 25 Tahun 1950 dan Keppres No. 246 Tahun 1963. Pada tahun 2018, PMI resmi diakui sebagai organisasi kemanusiaan melalui UU No. 1 Tahun 2018, dengan mandat untuk menjalankan tugas kemanusiaan berdasarkan Konvensi Jenewa 1949. Sampai tahun 2019, PMI telah hadir di 33 provinsi, 474 kabupaten/kota, dan 3.406 kecamatan dengan hampir 1,5 juta relawan.</p>
+    </div>
+
+    
+    <div class="video-section">Tonton Video Sejarah PMI</div>
+    <div class="video-embed">
+      <iframe 
+    src="https://www.youtube.com/embed/-uhksOI9CB0" 
+    title="Video PMR SMKN 65"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+    </div>
+
+    <div class="divider-container">
+    <div class="divider">
+      <span>Salam Kemanusiaan</span>
+    </div>
+  </div>
+
+  </div>
+</body>
+</html>
